@@ -1,11 +1,10 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
-
 import { useState, useEffect } from 'react';
 import { useWeb3React } from '@web3-react/core';
 import { PluginRegistration } from '@web3api/client-js';
 import { Web3ApiProvider } from '@web3api/react';
 import { ethereumPlugin, EthereumConfig } from '@web3api/ethereum-plugin-js';
+import * as dotenv from 'dotenv';
+dotenv.config({ path: './.env' });
 
 const networks: Record<
   string,
@@ -39,7 +38,9 @@ const networks: Record<
 const defaultEthConfig: EthereumConfig = {
   networks: {
     mainnet: {
-      provider: process.env.ETH_PROVIDER || '',
+      provider:
+        process.env.ETH_PROVIDER ||
+        'https://mainnet.infura.io/v3/b00b2c2cc09c487685e9fb061256d6a6',
     },
   },
   defaultNetwork: 'mainnet',
