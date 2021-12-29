@@ -44,6 +44,11 @@ const defaultEthConfig: EthereumConfig = {
   defaultNetwork: 'mainnet',
 };
 
+export const Uris = {
+  helloWorld: 'ens/helloworld.web3api.eth',
+  anotherUri: '',
+};
+
 export default function Web3ApiManager({
   children,
 }: {
